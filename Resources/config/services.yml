@@ -10,6 +10,7 @@ services:
             -
                 users: '@scytale_intercom.users_service'
                 tags:  '@scytale_intercom.tags_service'
+                messages: '@scytale_intercom.messages_service'
 
     scytale_intercom.users_service:
         class: Scytale\Bundle\IntercomBundle\Service\UsersService
@@ -20,3 +21,8 @@ services:
         class: Scytale\Bundle\IntercomBundle\Service\TagsService
         arguments:
             - '%scytale_intercom.credentials.access_token%'
+
+    scytale_intercom.messages_service:
+            class: Scytale\Bundle\IntercomBundle\Service\MessagesService
+            arguments:
+                - '%scytale_intercom.credentials.access_token%'

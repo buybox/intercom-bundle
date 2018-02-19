@@ -39,4 +39,12 @@ class IntercomProxyClient
     {
         return $this->factory->getTags();
     }
+
+    /**
+     * @return MessagesService
+     */
+    public function getMessages()
+    {
+        return $this->factory->getMessages();
+    }
 }

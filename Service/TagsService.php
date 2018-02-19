@@ -12,7 +12,7 @@ use Intercom\IntercomClient;
 class TagsService
 {
     /**
-     * IntercomProxyClient constructor.
+     * TagsService constructor.
      *
      * @param string $accessToken
      */

@@ -13,7 +13,7 @@ use Intercom\IntercomClient;
 class UsersService
 {
     /**
-     * IntercomProxyClient constructor.
+     * UsersService constructor.
      *
      * @param string $accessToken
      */
