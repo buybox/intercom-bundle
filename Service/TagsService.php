@@ -61,6 +61,22 @@ class TagsService
 
     /**
      * @param string $tagName
+     * @param array  $emails
+     *
+     * @return mixed
+     */
+    public function untagUsersByEmail($tagName, array $emails)
+    {
+        $users = array();
+        foreach ($emails as $email) {
+            $users[] = ['email' => $email, 'untag' => true];
+        }
+
+        return $this->tagUser($tagName, $users);
+    }
+
+    /**
+     * @param string $tagName
      * @param array  $userIds
      *
      * @return mixed
@@ -70,6 +86,22 @@ class TagsService
         $users = array();
         foreach ($userIds as $id) {
             $users[] = ['id' => $id];
+        }
+
+        return $this->tagUser($tagName, $users);
+    }
+
+    /**
+     * @param string $tagName
+     * @param array  $userIds
+     *
+     * @return mixed
+     */
+    public function untagUsersById($tagName, array $userIds)
+    {
+        $users = array();
+        foreach ($userIds as $id) {
+            $users[] = ['id' => $id, 'untag' => true];
         }
 
         return $this->tagUser($tagName, $users);
